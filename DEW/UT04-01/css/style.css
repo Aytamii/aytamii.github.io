@@ -89,7 +89,7 @@ input:invalid, textarea:invalid, select:invalid {
 
 /* Validación: campos válidos */
 input:valid, textarea:valid, select:valid {
-    border-color: green;
+    border-color: #007bff;
 }
 
 /* Checkbox y radio personalizados */
@@ -108,12 +108,6 @@ fieldset > div label {
 /* Estilo para "Mostrar contraseña" */
 #showPassword {
     margin-left: 5px;
-}
-
-/* Ajuste para select (Tipo de Documento y Año de Nacimiento) */
-select {
-    appearance: none;
-    background-size: 8px 10px;
 }
 
 /* Campo "DNI/NIE" combinado */
