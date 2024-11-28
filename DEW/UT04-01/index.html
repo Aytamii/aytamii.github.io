@@ -1,11 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UT04-01</title>
+    <title>Formulario</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>UT04-01</h1>
+    <form id="mainForm" action="https://www.w3schools.com/action_page.php" method="post">
+        <!-- Sección Datos Usuario -->
+        <fieldset>
+            <legend>Datos Usuario</legend>
+            <label for="username">Nombre de Usuario</label>
+            <input type="text" id="username" name="username" placeholder="UserName" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Introduce Contraseña" required>
+            
+            <div>
+                <input type="checkbox" id="showPassword">
+                <label for="showPassword">Mostrar Contraseña</label>
+            </div>
+        </fieldset>
+
+        <!-- Sección Datos Personales -->
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ejem: (+34)922123123" required pattern="^\(\+34\)\s?\d{9}$">
+
+            <label for="codigoPostal">Código Postal</label>
+            <input type="text" id="codigoPostal" name="codigoPostal" placeholder="38XXX" required pattern="^\d{5}$">
+
+            <label for="tipoDni">Tipo de Documento</label>
+            <select id="tipoDni" name="tipoDni" required>
+                <option value="">-- Selecciona --</option>
+                <option value="dni">DNI</option>
+                <option value="nie">NIE</option>
+            </select>
+
+            <label for="dni">Número de Documento</label>
+            <input type="text" id="dni" name="dni" placeholder="Introduce tu DNI/NIE" required pattern="[A-Za-z0-9]{9}">
+
+            <div>
+                <label>Crear cuenta como:</label>
+                <input type="radio" id="particular" name="cuenta" value="particular" required>
+                <label for="particular">Particular</label>
+                <input type="radio" id="empresa" name="cuenta" value="empresa">
+                <label for="empresa">Empresa</label>
+            </div>
+
+            <label for="anoNacimiento">Año de Nacimiento</label>
+            <select id="anoNacimiento" name="anoNacimiento" required>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <!-- Añade más años si es necesario -->
+            </select>
+
+            <!-- Checkbox de aficiones -->
+            <fieldset>
+                <legend>Elige tus aficiones:</legend>
+                <div>
+                    <input type="checkbox" id="musica" name="aficiones" value="musica">
+                    <label for="musica">Música</label>
+
+                    <input type="checkbox" id="deporte" name="aficiones" value="deporte">
+                    <label for="deporte">Deporte</label>
+
+                    <input type="checkbox" id="videojuegos" name="aficiones" value="videojuegos">
+                    <label for="videojuegos">Videojuegos</label>
+
+                    <input type="checkbox" id="manualidades" name="aficiones" value="manualidades">
+                    <label for="manualidades">Manualidades</label>
+
+                    <input type="checkbox" id="artes" name="aficiones" value="artes">
+                    <label for="artes">Artes</label>
+
+                    <input type="checkbox" id="lectura" name="aficiones" value="lectura">
+                    <label for="lectura">Lectura</label>
+                </div>
+            </fieldset>
+        </fieldset>
+
+        <!-- Sección Datos Publicación -->
+        <fieldset>
+            <legend>Datos Publicación</legend>
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Título" maxlength="15" required>
+
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" name="descripcion" placeholder="Descripción" maxlength="120" rows="4" required></textarea>
+        </fieldset>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Mostrar contraseña
+        document.getElementById("showPassword").addEventListener("change", function () {
+            const passwordField = document.getElementById("password");
+            passwordField.type = this.checked ? "text" : "password";
+        });
+    </script>
 </body>
 </html>
