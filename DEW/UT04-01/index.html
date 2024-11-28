@@ -46,7 +46,7 @@
             </select>
 
             <label for="dni">Número de Documento</label>
-            <input type="text" id="dni" name="dni" placeholder="Introduce tu DNI/NIE" required pattern="[A-Za-z0-9]{9}">
+            <input type="text" id="dni" name="dni" placeholder="Introduce tu DNI/NIE" required pattern="^([XYZ][0-9]{7}[A-Z]|[0-9]{8}[A-Z])$">
 
             <div>
                 <label>Crear cuenta como:</label>
@@ -69,6 +69,7 @@
                 <option value="2008">2002</option>
                 <option value="2008">2001</option>
                 <option value="2008">2000</option>
+                <!-- MAS O MENOS PUSE HASTA ESTE AÑO PARA NO AÑADIR UN MONTÓN MÁS -->
             </select>
 
             <!-- Checkbox de aficiones -->
