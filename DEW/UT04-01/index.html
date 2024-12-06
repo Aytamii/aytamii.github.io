@@ -1,115 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Evaluación</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form id="mainForm" action="https://www.w3schools.com/action_page.php" method="post">
-        <!-- Sección Datos Usuario -->
-        <fieldset>
-            <legend>Datos Usuario</legend>
-            <label for="username">Nombre de Usuario</label>
-            <input type="text" id="username" name="username" placeholder="UserName" required>
+  <div class="container">
+    <form id="evaluationForm" action="https://www.w3schools.com/action_page.php" method="POST" novalidate>
+      <h1>Formulario de Evaluación</h1>
+      
+      <label for="NombreUsuario">Nombre de Usuario</label>
+      <input type="text" id="NombreUsuario" name="NombreUsuario" placeholder="Usuario" minlength="4" maxlength="20" required>
+      <span class="error"></span>
 
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="Introduce Contraseña" required>
-            
-            <div>
-                <input type="checkbox" id="showPassword">
-                <label for="showPassword">Mostrar Contraseña</label>
-            </div>
-        </fieldset>
+      <label for="Contrasena">Contraseña</label>
+      <input type="password" id="Contrasena" name="Contrasena" placeholder="8 números" minlength="8" maxlength="8" pattern="\d{8}" required>
+      <span class="error"></span>
+      <div>
+        <input type="checkbox" id="showPassword">
+        <label for="showPassword">Mostrar contraseña</label>
+      </div>
 
-        <!-- Sección Datos Personales -->
-        <fieldset>
-            <legend>Datos Personales</legend>
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+      <label for="Nombre">Nombre</label>
+      <input type="text" id="Nombre" name="Nombre" placeholder="Tu nombre" minlength="4" maxlength="20" required>
+      <span class="error"></span>
 
-            <label for="apellidos">Apellidos</label>
-            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+      <label for="Apellidos">Apellidos</label>
+      <input type="text" id="Apellidos" name="Apellidos" placeholder="Tus apellidos" minlength="4" maxlength="20" required>
+      <span class="error"></span>
 
-            <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Ejem: (+34)922123123" required pattern="^\(\+34\)\s?\d{9}$">
+      <label for="Telefono">Teléfono</label>
+      <input type="tel" id="Telefono" name="Telefono" placeholder="(+34)922123123" pattern="\(\+34\)922\d{6}" required>
+      <span class="error"></span>
 
-            <label for="codigoPostal">Código Postal</label>
-            <input type="text" id="codigoPostal" name="codigoPostal" placeholder="38XXX" required pattern="^\d{5}$">
+      <label for="CodigoPostal">Código Postal</label>
+      <input type="text" id="CodigoPostal" name="CodigoPostal" placeholder="38001" pattern="38\d{3}" required>
+      <span class="error"></span>
 
-            <label for="tipoDni">Tipo de Documento</label>
-            <select id="tipoDni" name="tipoDni" required>
-                <option value="">-- Selecciona --</option>
-                <option value="dni">DNI</option>
-                <option value="nie">NIE</option>
-            </select>
+      <label for="TipoDocumento">Tipo de Documento</label>
+      <select id="TipoDocumento" name="TipoDocumento" required>
+        <option value="">Seleccione</option>
+        <option value="DNI">DNI</option>
+        <option value="NIE">NIE</option>
+      </select>
+      <span class="error"></span>
 
-            <label for="dni">Número de Documento</label>
-            <input type="text" id="dni" name="dni" placeholder="Introduce tu DNI/NIE" required pattern="^([XYZ][0-9]{7}[A-Z]|[0-9]{8}[A-Z])$">
+      <label for="DniNie">DNI/NIE</label>
+      <input type="text" id="DniNie" name="DniNie" placeholder="Introduce tu documento" required>
+      <span class="error"></span>
 
-            <div>
-                <label>Crear cuenta como:</label>
-                <input type="radio" id="particular" name="cuenta" value="particular" required>
-                <label for="particular">Particular</label>
-                <input type="radio" id="empresa" name="cuenta" value="empresa">
-                <label for="empresa">Empresa</label>
-            </div>
+      <label for="CuentaComo">Cuenta como</label>
+      <select id="CuentaComo" name="CuentaComo" required>
+        <option value="">Seleccione</option>
+        <option value="Particular">Particular</option>
+        <option value="Empresa">Empresa</option>
+      </select>
+      <span class="error"></span>
 
-            <label for="anoNacimiento">Año de Nacimiento</label>
-            <select id="anoNacimiento" name="anoNacimiento" required>
-                <option value="2010">2010</option>
-                <option value="2009">2009</option>
-                <option value="2008">2008</option>
-                <option value="2008">2007</option>
-                <option value="2008">2006</option>
-                <option value="2008">2005</option>
-                <option value="2008">2004</option>
-                <option value="2008">2003</option>
-                <option value="2008">2002</option>
-                <option value="2008">2001</option>
-                <option value="2008">2000</option>
-                <!-- MAS O MENOS PUSE HASTA ESTE AÑO PARA NO AÑADIR UN MONTÓN MÁS -->
-            </select>
+      <label for="AnioNacimiento">Año de Nacimiento</label>
+      <input type="number" id="AnioNacimiento" name="AnioNacimiento" min="1920" max="2010" required>
+      <span class="error"></span>
 
-            <!-- Checkbox de aficiones -->
-            <fieldset>
-                <legend>Elige tus aficiones:</legend>
-                <div>
-                    <input type="checkbox" id="musica" name="aficiones" value="musica">
-                    <label for="musica">Música</label>
+      <fieldset>
+        <legend>Aficiones</legend>
+        <label><input type="checkbox" name="Aficiones" value="MU"> Música</label>
+        <label><input type="checkbox" name="Aficiones" value="DE"> Deportes</label>
+        <label><input type="checkbox" name="Aficiones" value="VI"> Videojuegos</label>
+        <label><input type="checkbox" name="Aficiones" value="MA"> Manualidades</label>
+        <label><input type="checkbox" name="Aficiones" value="AR"> Artes</label>
+        <label><input type="checkbox" name="Aficiones" value="LE"> Lectura</label>
+        <span class="error"></span>
+      </fieldset>
 
-                    <input type="checkbox" id="deporte" name="aficiones" value="deporte">
-                    <label for="deporte">Deporte</label>
+      <label for="PublicacionTitulo">Título de Publicación</label>
+      <input type="text" id="PublicacionTitulo" name="PublicacionTitulo" placeholder="Título" minlength="4" maxlength="15" required>
+      <span class="error"></span>
 
-                    <input type="checkbox" id="videojuegos" name="aficiones" value="videojuegos">
-                    <label for="videojuegos">Videojuegos</label>
+      <label for="PublicacionDescripcion">Descripción de Publicación</label>
+      <textarea id="PublicacionDescripcion" name="PublicacionDescripcion" placeholder="Descripción" minlength="4" maxlength="120" required></textarea>
+      <span class="error"></span>
 
-                    <input type="checkbox" id="manualidades" name="aficiones" value="manualidades">
-                    <label for="manualidades">Manualidades</label>
-
-                    <input type="checkbox" id="artes" name="aficiones" value="artes">
-                    <label for="artes">Artes</label>
-
-                    <input type="checkbox" id="lectura" name="aficiones" value="lectura">
-                    <label for="lectura">Lectura</label>
-                </div>
-            </fieldset>
-        </fieldset>
-
-        <!-- Sección Datos Publicación -->
-        <fieldset>
-            <legend>Datos Publicación</legend>
-            <label for="titulo">Título</label>
-            <input type="text" id="titulo" name="titulo" placeholder="Título" maxlength="15" required>
-
-            <label for="descripcion">Descripción</label>
-            <textarea id="descripcion" name="descripcion" placeholder="Descripción" maxlength="120" rows="4" required></textarea>
-        </fieldset>
-
-        <button type="submit">Enviar</button>
+      <button type="submit">Enviar</button>
     </form>
 
-    <script src="./js/script.js"></script>
+    <!-- Div para los errores globales -->
+    <div id="errorListDiv">
+      <ul id="errorList"></ul>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
