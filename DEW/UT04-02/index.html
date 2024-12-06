@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Evaluación</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <form id="evaluationForm" action="https://www.w3schools.com/action_page.php" method="POST" novalidate>
+      <h1>Formulario de Evaluación</h1>
+      
+      <label for="NombreUsuario">Nombre de Usuario</label>
+      <input type="text" id="NombreUsuario" name="NombreUsuario" placeholder="Usuario" minlength="4" maxlength="20" required>
+      <span class="error"></span>
+
+      <label for="Contrasena">Contraseña</label>
+      <input type="password" id="Contrasena" name="Contrasena" placeholder="8 números" minlength="8" maxlength="8" pattern="\d{8}" required>
+      <span class="error"></span>
+      <div>
+        <input type="checkbox" id="showPassword">
+        <label for="showPassword">Mostrar contraseña</label>
+      </div>
+
+      <label for="Nombre">Nombre</label>
+      <input type="text" id="Nombre" name="Nombre" placeholder="Tu nombre" minlength="4" maxlength="20" required>
+      <span class="error"></span>
+
+      <label for="Apellidos">Apellidos</label>
+      <input type="text" id="Apellidos" name="Apellidos" placeholder="Tus apellidos" minlength="4" maxlength="20" required>
+      <span class="error"></span>
+
+      <label for="Telefono">Teléfono</label>
+      <input type="tel" id="Telefono" name="Telefono" placeholder="(+34)922123123" pattern="\(\+34\)922\d{6}" required>
+      <span class="error"></span>
+
+      <label for="CodigoPostal">Código Postal</label>
+      <input type="text" id="CodigoPostal" name="CodigoPostal" placeholder="38001" pattern="38\d{3}" required>
+      <span class="error"></span>
+
+      <label for="TipoDocumento">Tipo de Documento</label>
+      <select id="TipoDocumento" name="TipoDocumento" required>
+        <option value="">Seleccione</option>
+        <option value="DNI">DNI</option>
+        <option value="NIE">NIE</option>
+      </select>
+      <span class="error"></span>
+
+      <label for="DniNie">DNI/NIE</label>
+      <input type="text" id="DniNie" name="DniNie" placeholder="Introduce tu documento" required>
+      <span class="error"></span>
+
+      <label for="CuentaComo">Cuenta como</label>
+      <select id="CuentaComo" name="CuentaComo" required>
+        <option value="">Seleccione</option>
+        <option value="Particular">Particular</option>
+        <option value="Empresa">Empresa</option>
+      </select>
+      <span class="error"></span>
+
+      <label for="AnioNacimiento">Año de Nacimiento</label>
+      <input type="number" id="AnioNacimiento" name="AnioNacimiento" min="1920" max="2010" required>
+      <span class="error"></span>
+
+      <fieldset>
+        <legend>Aficiones</legend>
+        <label><input type="checkbox" name="Aficiones" value="MU"> Música</label>
+        <label><input type="checkbox" name="Aficiones" value="DE"> Deportes</label>
+        <label><input type="checkbox" name="Aficiones" value="VI"> Videojuegos</label>
+        <label><input type="checkbox" name="Aficiones" value="MA"> Manualidades</label>
+        <label><input type="checkbox" name="Aficiones" value="AR"> Artes</label>
+        <label><input type="checkbox" name="Aficiones" value="LE"> Lectura</label>
+        <span class="error"></span>
+      </fieldset>
+
+      <label for="PublicacionTitulo">Título de Publicación</label>
+      <input type="text" id="PublicacionTitulo" name="PublicacionTitulo" placeholder="Título" minlength="4" maxlength="15" required>
+      <span class="error"></span>
+
+      <label for="PublicacionDescripcion">Descripción de Publicación</label>
+      <textarea id="PublicacionDescripcion" name="PublicacionDescripcion" placeholder="Descripción" minlength="4" maxlength="120" required></textarea>
+      <span class="error"></span>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="errorListDiv">
+      <ul id="errorList"></ul>
+    </div>
+
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
